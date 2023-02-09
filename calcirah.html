@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>calculator@wing2rah</title>
+<style type="text/css" media="all">
+  body{
+  background:white;
+}
+.box{
+  height: 300px;
+  width: 90%;
+  margin: auto;
+box-shadow: 0 0 65px green inset;
+  border-radius: 20px;
+  margin-top: 30px;
+  background-color: white;
+  
+  
+}
+.ball{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: 15px;
+}
+.r{
+  background-color: red;
+}
+.g{
+  background-color: green;
+}
+.b{
+  background-color: blue;
+}
+.p{
+  background-color: purple;
+}
+.m{
+  background-color: magenta;
+}
+.o{
+  background-color: orange;
+}
+marquee{
+  color: purple;
+}
+.button{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+button{
+  height: 50px;
+  color: white;
+  background-color:#49ed66b3;
+  font-size: 20px;
+  
+}
+input{
+  text-align: center;
+  font-size: 25px;
+  height: 50px;
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid green;
+  box-shadow: 0 0 25px green inset;
+  margin-bottom: 20px;
+  
+}
+.small{
+  font-size: 25px;
+}
+.margindefault{
+  margin:30px;
+}
+.center{
+  text-align: center;
+}
+.center2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid{
+  height: 300px;
+  width: 95%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+ 
+ margin: auto;
+ border-radius: 30px;
+}
+.body{
+  height: 100%;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="body">
+ 
+<marquee><h1>rahul calculator</h1></marquee>
+
+  <div id="inpt" class="input">
+    <input type="text" name="output" id="screen" />
+    </div>
+    <div class="button" id="btn">
+  <button>AC</button>
+<button id="123">❤️</button>
+    <button>+</button>
+    <button>*</button>
+        <button>/</button>
+        <button>-</button>
+      <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        
+        <button>9</button>
+      
+        <button>.</button>
+        <button>0</button>
+        
+        <button>=</button>
+    
+      </div>
+</div>
+<center><h1><u><i>background</i></u><h1></center>
+<div class="box">
+  <div class="grid">
+    <div class="margindefault">
+  <div class="ball r" id="ballr1"></div>
+  <div class="ball b" id="ballb1"></div>
+  <div class="ball g" id="ballg1"></div>
+  </div>
+  <div class="margindefault">
+  <div class="ball m" id="ballm1"></div>
+  <div class="ball o" id="ballo1"></div>
+  <div class="ball p" id="ballp1"></div>
+  </div>
+  </div>
+</div>
+<center><h1><u><i>buttons</i></u><h1></center>
+<div class="box">
+  <div class="grid">
+<div class="margindefault">
+  <div class="ball g" id="ballg"></div>
+<div class="ball r" id="ballr"></div>
+<div class="ball b" id="ballb"></div>
+</div>
+<div class="margindefault">
+<div class="ball o" id="ballo"></div>
+<div class="ball m" id="ballm"></div>
+<div class="ball p" id="ballp"></div>
+</div>
+</div>
+</div>
+<center><h1><u><i>From me </i></u></h1></center>
+<div class="box center2">
+<p class="small">hello friends, hope u enjoy it . here is my apology for any hurts</p>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script type="text/javascript" charset="utf-8">
+  $('#ballr1').click(function(){
+    $('.body').css("background","red")
+  })
+  $('#ballb1').click(function(){
+    $('.body').css("background","blue")
+  })
+  $('#ballg1').click(function(){
+    $('.body').css("background","green")
+  })
+  $('#ballo1').click(function(){
+    $('.body').css("background","orange")
+  })
+  $('#ballp1').click(function(){
+    $('.body').css("background","purple")
+  })
+  $('#ballm1').click(function(){
+    $('.body').css("background","magenta")
+  })
+</script>
+ <script type="text/javascript" charset="utf-8">
+    
+let screen=document.getElementById('screen');
+buttons=document.querySelectorAll('button');
+let screenval="";
+for(item of buttons){
+item.addEventListener('click',(e)=>{
+buttonText=e.target.innerText;
+if(buttonText=="AC"){
+screenval="";
+screen.value=screenval;
+}
+else if(buttonText=="="){
+var ans2=screen.value= eval(screenval);
+screenval=ans2;
+screen.value=screenval;
+}
+else if(buttonText=="❤️"){
+ams=prompt("what is your name?");
+if(ams){
+alert("welcome"+" "+ams);
+document.getElementById('123').innerHTML=ams;
+}}
+else{
+screenval+=buttonText;
+screen.value=screenval;
+}
+})
+}
+</script>
+<script>
+  var body=document.getElementById('ballm');
+  body.addEventListener("click",function(){
+  buttons=document.querySelectorAll("button");
+  for(let i=0;i<buttons.length;i++){
+    buttons[i].style.backgroundColor="magenta"
+  }
+  });
+  var body=document.getElementById('ballr');
+  body.addEventListener("click",function(){
+  buttons=document.querySelectorAll("button");
+  for(let i=0;i<buttons.length;i++){
+    buttons[i].style.backgroundColor="red"
+  }
+  });
+  var body=document.getElementById('ballb');
+  body.addEventListener("click",function(){
+  buttons=document.querySelectorAll("button");
+  for(let i=0;i<buttons.length;i++){
+    buttons[i].style.backgroundColor="blue"
+  }
+  });
+  var body=document.getElementById('ballg');
+  body.addEventListener("click",function(){
+  buttons=document.querySelectorAll("button");
+  for(let i=0;i<buttons.length;i++){
+    buttons[i].style.backgroundColor="green"
+  }
+  });
+  var body=document.getElementById('ballo');
+  body.addEventListener("click",function(){
+  buttons=document.querySelectorAll("button");
+  for(let i=0;i<buttons.length;i++){
+    buttons[i].style.backgroundColor="orange"
+  }
+  });
+  var body=document.getElementById('ballp');
+  body.addEventListener("click",function(){
+  buttons=document.querySelectorAll("button");
+  for(let i=0;i<buttons.length;i++){
+    buttons[i].style.backgroundColor="purple"
+  }
+  });
+  </script>
+  </div>
+</body>
+</html>
+
